@@ -30,3 +30,8 @@
 ## Hatırlatma
 
 Bu repolardan herhangi biri Maç Analiz Merkezi'ne eklenecekse kuralın geçerli: her hücrede arka planda denenir, katkı yaptığı yere eklenir, bozduğu yere eklenmez.
+
+## Programın kayıtlarıyla deneme (duzeltme140, MAM_gonder 22.11.2026 21:40)
+
+- **open-matchday:** Programda zaten 249.247 maç sonucu (1.383 lig) ve 35.071 maçın istatistiği var. open-matchday'de 26/27 sezonunda 9.556 maç sonucu var, yani yeni bir şey getirmiyor. Tek farkı yarı yarı korner; program korner bahsi vermediği için işe yaramıyor.
+- **serayd61 dış model:** 7.008 kayıttan 392'si eşleşti. Olasılıkları bizimkinden iyi (1/X/2 tutma %58,9 vs %53,6; log-loss 0,954 vs 0,978). Bizim OYNA bahislerine onay olarak denendi: onayladığında 147 bahis %66,7 tuttu, onaylamadığında 36 bahis %63,9 tuttu. Günlere göre bölününce tek günlerde fark +4,4 puan, çift günlerde -11 puan (yalnız 8 bahis). Yani iki yarıda ters yöne gidiyor. 36 bahiste rastgele sapma ±16 puana kadar çıkabilir. Bu yüzden karara girmedi.
