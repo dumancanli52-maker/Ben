@@ -1,6 +1,6 @@
 # Maç Analiz Merkezi: bekleyen kurallar
 
-## GOL ARALIĞI ŞARTI (sınandı, programa eklenecek: kullanıcı MAM_gonder gönderince)
+## GOL ARALIĞI ŞARTI (146. düzeltmede programa eklendi, 27.11.2026)
 
 Kayıt tarihi: 27 Kasım 2026. Veri: MAM_gonder 27.11 22:27, 6.995 sonuçlu kayıt.
 
