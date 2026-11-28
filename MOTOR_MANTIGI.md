@@ -62,3 +62,26 @@ Excel'in yüzdeleri programa gelir; program hücre denetiminin eklerini koyar (�
 - İki takımın golleri bağımsız Poisson: beraberlik (özellikle 0-0, 1-1) olasılığı genelde biraz düşük çıkar.
 - 12 maçlık dengeleme sezon başında güçlü: ilk haftalarda yüzdeler lig ortalamasına yakın kalır.
 - İkili maçlar eski sezonlardan da gelebilir; aynı 250'ye karşı sayıldığı için etkisi küçük.
+
+## Ölçüm: Excel'in ham yüzdeleri gerçekte ne yaptı (MAM 28.11 10:23, 3.869 sonuçlu maç öncesi kaydı, 2-28 Kasım)
+Kayıttaki biz_ sütunları = hücre eklerinden önceki ham Excel yüzdesi.
+
+| | Excel ort. | Gerçek |
+|---|---|---|
+| MS 1 | %44,1 | %44,6 |
+| MS X | %25,3 | %23,1 |
+| MS 2 | %30,6 | %32,3 |
+| 2,5 Üst | %53,3 | %53,4 |
+| KG Var | %55,4 | %53,3 |
+| 0-1 / 2-3 / 4-6 / 7+ gol | 23,8 / 44,1 / 28,2 / 3,8 | 24,0 / 44,2 / 28,4 / 3,4 |
+
+- Ortalamada dürüst: yüzdeler gerçeğe 0-2 puan yakın. Yüksek yüzdelerde güçlü: 2,5 Üst %70-79 -> 314 maç %74; MS 1 %70-79 -> 171 maç %71, %80-89 -> 45 maç %89.
+- Ayırma gücü orta: yüzdesi yüksek tarafı seçince 2,5 Alt/Üst %56,9, KG %53,9, MS %51,0 tutuyor. KG Var %60-69 dediğinde gerçek %56.
+- **Gol aralığı hücreleri:** programdaki "45" hücresi Excel'de **4-6 gol**, "6" hücresi **7+ gol** (ortalamalar ancak böyle tutuyor; Excel etiketi de böyle).
+  146'nın MS 2 şartı ekranda "4-5 gol" diye yazıyor ama ölçülen ve kullanılan hücre 4-6 gol: kural sınamada bu hücreyle geçti, yalnız adı yanlış.
+
+### Üç gözlemin sınaması
+1. "Son maç formu az etkili, zarar mı?" -> **Hayır.** Excel'in 2,5 Üst yüzdesi sabitken son 5 maçta çok Üst gören takımlar beklenenden AZ Üst yaptı
+   (7-10 Üst: Excel %61,2, gerçek %57,1; 0-3 Üst: Excel %41,8, gerçek %49,2). Form geri dönüyor; forma daha çok ağırlık vermek bozardı.
+2. "Beraberlik düşük çıkar" -> **Yanlış.** Excel beraberliği fazla veriyor (%25,3 / gerçek %23,1), en çok gollü maçlarda (%23,1 / %19,6). Kısır maçlarda tam (%27,5 / %27,5).
+3. "Sezon başı ortalamaya yakın" -> **Sınanamadı:** kayıtlarda tabloda 6 maçtan az oynamış lig yok. 21+ maçlık liglerde isabet daha yüksek (2,5 taraf %60,4, KG %60,4).
