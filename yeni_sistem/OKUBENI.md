@@ -5,6 +5,20 @@ Kurallar: hiçbir adım OYNA vermez; her adım yazılır, sınanır, kullanıcı
 Kaynak: maç sonuçları arşivi. Her maç için tablo o maçtan önceki maçlarla kurulur: geçmişte sınanan ile canlıda çalışan aynı hesap.
 Kod C# 5 (PowerShell 5.1 Add-Type ile derlenir).
 
+## KULLANICININ ŞARTLARI (28.11.2026, el yazısı liste) · her adım bunlara uyacak
+1. Sistem hatasız çalışacak.
+2. Hiçbir yüzde kendi başına hesaplanmaz; her sütunun yüzdesi sırasına göre öncekinden destek alır (tablo -> iç/dış -> İY -> MS -> gol aralıkları -> bahis; ekler aynı zincire girer).
+3. Takım karnesi önemli.
+4. Takım güç karnesi önemli.
+5. Maç karnesi önemli.
+6. Ekranda görünen her yazı bu sistemin sonucundan üretilir.
+7. Eski sistemden hiçbir şey kalmayacak.
+8. xG kaydı ve kendi xG'mizi oluşturma olacak.
+9. OYNA şartı: her şart bizim yüzde dilimimize girdiğinde OYNA.
+10. Kesinlikle eski sistemden daha iyi olacak.
+11. Hava durumu ve şartlar önemli.
+12. Geçmiş maçlardan alınan kadro değerlendirmesi kullanılabilir.
+
 ## Adım 1: Puan tablosu (Adim1_PuanTablosu.cs) · sınandı 28.11.2026
 - Arşiv okunur (aynı dakikada aynı iki takımın maçı bir kez), lig başına eskiden yeniye sıralanır.
 - Sezon: geriye doğru okunur; 25 günden uzun aradan ancak aradan önceki ve sonraki takımlar aynıysa geçilir (kış arası, Dünya Kupası arası aynı sezon).
