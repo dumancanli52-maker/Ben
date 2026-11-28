@@ -29,6 +29,10 @@ namespace YeniSistem
         public const double IcDisPay = 0.25;   // Excel CG2 = 0,5
         public const double EvCarpan = 1.05;   // ev sahibinin beklenen golü
         public const double DepCarpan = 0.925; // deplasmanın beklenen golü
+        // Adım 5 ayarı (28.11.2026, aynı öğren-sına): maçın toplam gol tahmini lig ortalamasına yaklaştırılır ve hafifçe artırılır
+        // (Excel hâli toplamda fazla emindi: 0-1 gol %44 dediğinde gerçek %33). Ev / deplasman oranı korunur; MS hatası değişmedi.
+        public const double ToplamCarpan = 1.02;
+        public const double ToplamYakinlik = 0.4;   // 1 = değişmez, 0 = her maç lig ortalaması
         public const int EnAzMac = 3;
         public const int MaxGol = 10;
 
@@ -58,6 +62,8 @@ namespace YeniSistem
             double depDis = Oran(dd == null ? 0 : dd.A, dd == null ? 0 : dd.O, disOrt) * Oran(ei == null ? 0 : ei.Y, ei == null ? 0 : ei.O, disOrt) / disOrt;
             t.LamEv = EvCarpan * ((1 - IcDisPay) * evGenel + IcDisPay * evIc);
             t.LamDep = DepCarpan * ((1 - IcDisPay) * depGenel + IcDisPay * depDis);
+            double ligTop = 2.0 * ort, top = t.LamEv + t.LamDep;
+            if (top > 0) { double r = ToplamCarpan * (ligTop + ToplamYakinlik * (top - ligTop)) / top; t.LamEv *= r; t.LamDep *= r; }
             t.Skor = Dagilim(t.LamEv, t.LamDep);
             for (int i = 0; i <= MaxGol; i++) for (int j = 0; j <= MaxGol; j++) { double p = t.Skor[i, j]; if (i > j) t.P1 += p; else if (i == j) t.PX += p; else t.P2 += p; }
             t.Gecerli = true;

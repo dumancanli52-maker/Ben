@@ -59,3 +59,12 @@ Ayarlanan: dengeleme maç sayısı, iç / dış saha payı, ev ve deplasman bekl
 | Ayarlı | 1,0222 / 1,0208 | 3,0459 / 2,9987 | %42,8 / %43,8 |
 Kalibrasyon (ayarlı): MS 1 %50+ dedi %55 gerçek %56 · %60+ %64 / %64 · %70+ %76 / %79; MS 2 %50+ %54 / %54 · %60+ %64 / %64.
 En olası sonuç %48,3 -> %48,9. Ortalama gol 2,80 diyor, gerçek 2,88 (gol aralıklarında ayrıca bakılacak). C# koduyla yeniden ölçüldü: aynı.
+
+## Adım 5-8: Gol aralıkları (Adim5_GolAraligi.cs) · sınandı 28.11.2026
+- Ayrı model yok: Adım 4'ün skor dağılımından 0-1 / 2-3 / 4-5 / 6+ okunur; MS ile aynı hesaptan çıkar.
+- Ayarsız hâl toplam golde fazla emindi: 0-1 gol %44 dediğinde gerçek %33, 6+ %24 dediğinde %15; ortalama 2,80 gol diyor, gerçek 2,88.
+- Ayar (Adım 4'e konuldu, öğren-sına): toplam gol tahmini lig ortalamasına yaklaştırılır (yakınlık 0,4) ve x 1,02. İki öğrenmede x 1,03 / 0,4 ve x 1,01 / 0,3 çıktı.
+  Düşük skor (Dixon-Coles) düzeltmesi iki yarıda ters yön gösterdi (-0,05 / +0,05): alınmadı.
+- Sonuç (15.144 maç, C# koduyla): gol aralığı hatası tek gün 1,2439 -> 1,2301, çift gün 1,2355 -> 1,2226; MS hatası değişmedi (1,0218 / 1,0215).
+  Ortalama: 0-1 %22,8 (gerçek %22,6) · 2-3 %44,4 (%44,8) · 4-5 %24,8 (%24,9) · 6+ %8,0 (%7,8); beklenen toplam gol 2,88 (gerçek 2,88).
+  Kalan kusur: en uçtaki "kısır maç" tahmini (0-1 gol %43+ dediği 366 maç) hâlâ iyimser (%43 -> %36, %54 -> %38).
