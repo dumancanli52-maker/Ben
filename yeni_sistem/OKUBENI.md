@@ -195,3 +195,9 @@ Veri genişletildi: MAM'daki sonuçlu ve site oranlı 5.278 maçın ligleri içi
 - Aynı maçlarda yeni sistem tutmada +3,6 puan, kârda +1,6 puan önde; iki yarıda da eski programın üstünde.
 - Dilimler: 2,5 Üst %66-86 (iki yarıda aynı), 2,5 Alt %60-72 / %60-80, 3,5 Alt %62-74 / %66-78; KG Var, MS 2, 1,5 Üst tek yarıda.
 - Not: zincirin 6 ayarı aynı dönemin maçlarından öğrenildi (bu maçların bir kısmı dahil); dilimler ise öbür yarıdan.
+
+## KARAR SİSTEME KONDU (Karar.cs, Tahmin.ps1) · 28.11.2026 17:15
+Dilimler bütün 4.610 oranlı maçtan öğrenildi (en az 60 maç, en az %62 tutmuş, 12+ puan genişlik):
+1,5 Üst %60-72 (79 maç %68,4) · 2,5 Üst %66-86 (178 maç %64,0) · 2,5 Alt %60-72 (290 maç %62,8) · 3,5 Alt %62-74 (263 maç %64,6).
+MS 1 / 2 ve KG Var / Yok bu çıtayı geçemedi, kurala girmiyor. OYNA: yüzde dilimde + site oranı 1,30+ + tablo kontrolü; maç başı tek bahis.
+İlk uygulama: 28-29 Kasım'ın başlamamış 726 maçı -> 136 OYNA (3,5 Alt 90, 2,5 Üst 27, 2,5 Alt 17, 1,5 Üst 2); tahmin/YeniSistem_OYNA_2026-11-28.xlsx.
