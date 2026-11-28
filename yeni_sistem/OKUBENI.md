@@ -162,3 +162,18 @@ tablosu tam liglerde 3.343 maç (571 yağmurlu, 189 rüzgarlı 20+ km/s, 263 aş
   gol aralığı iki yarıda iyileşti (1,2283 -> 1,2273; 1,2318 -> 1,2314) ama MS iki yarıda biraz bozuldu (+0,0002) ve gol hatası bir yarıda bozuldu: tutarlı değil.
 - Rüzgar: iki yarı ters yön (+0,02 / -0,02), ikisi de bozdu. Aşırı sıcak / soğuk: -0,05 / 0, katkı yok.
 - Hava kayıtları biriktikçe (özellikle yağmurlu maç sayısı) yeniden sınanacak.
+
+## Karar adımı (kullanıcının 9. şartı: "her şart bizim yüzde dilimimize girince OYNA") · geniş veriyle sınandı 28.11.2026 · SİSTEME KONMADI
+Veri genişletildi: MAM'daki sonuçlu ve site oranlı 5.278 maçın ligleri için 4.460 takımın maç listesi indirildi (arşiv 164.709 maç, 15.942'si istatistikli);
+4.610 maç yeni sistemle hesaplandı (her maç kendinden önceki maçlarla). Bahisler: MS 1 / 2, 1,5 Üst, 2,5 Alt / Üst, 3,5 Alt / Üst, KG Var / Yok (KG aynı skor dağılımından).
+Şart: bahsin yüzdesi kendi diliminde + site oranı 1,30+; dilim bir yarıda öğrenilir (öğrenilen yarıda %62 altı kapalı), öbür yarıda denenir; maç başı tek bahis.
+| Dilim şekli | Bahis | Tuttu | Yarılar | Kâr | Eski programın maçlarında |
+|---|---|---|---|---|---|
+| dar (6 puan, 30+ maç) | 564 | %59,8 | %63,2 / %56,0 | -%15,8 | 457 bahis %61,3 |
+| alt sınırlı (X ve üstü, 60+ maç) | 668 | %59,7 | %61,7 / %58,5 | -%15,9 | 543 %60,8 |
+| geniş (12+ puan, 60+ maç) | 732 | %59,8 | %60,9 / %58,9 | -%15,6 | 581 %61,3 |
+| geniş (16+ puan, 100+ maç) | 638 | %58,5 | %65,2 / %56,2 | -%16,4 | 545 %58,7 |
+| Eski program, aynı maçlar (kayıttaki karar) | 1.714 | %59,3 | %60,4 / %58,2 | -%12,8 | |
+- Tutma oranında yeni sistem eski programla aynı yerde (aynı maçlarda 1-2 puan üstte), kârda 3 puan geride; daha az bahis veriyor.
+- Dar dilimler iki yarıda farklı seçiliyor (şansa göre öğrenme); geniş dilimler daha dengeli.
+- Şart 10 ("kesinlikle eski sistemden iyi") henüz sağlanmadı: karar kuralı sisteme konmadı.
