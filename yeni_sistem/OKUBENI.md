@@ -177,3 +177,21 @@ Veri genişletildi: MAM'daki sonuçlu ve site oranlı 5.278 maçın ligleri içi
 - Tutma oranında yeni sistem eski programla aynı yerde (aynı maçlarda 1-2 puan üstte), kârda 3 puan geride; daha az bahis veriyor.
 - Dar dilimler iki yarıda farklı seçiliyor (şansa göre öğrenme); geniş dilimler daha dengeli.
 - Şart 10 ("kesinlikle eski sistemden iyi") henüz sağlanmadı: karar kuralı sisteme konmadı.
+
+## Ek 7: Çapraz (kullanıcının yöntemi, sıfırdan; Ek7_Capraz.cs, Adım 4'e bağlı) · sınandı ve alındı 28.11.2026
+- Her takımın maçtan önceki son 15 maçı (her turnuva) ve evde / deplasmanda son 7 maçı: çapraz ev golü = (ev attı + dep yedi) / 2, dep tersi;
+  genel ve iç-dış yarı yarıya; beklenen gol = zincirin beklenen golü^0,8 x çapraz^0,2. Şart: 8 genel ve 4 iç-dış maç.
+- Öğren-sına (14.555 maç; taban: tablo + şut + ikili maç): iki öğrenmede de çapraz payı 0,2, iç-dış payı 0,5.
+  Sınanan: tek gün MS 1,0200 -> 1,0189, aralık 1,2198 -> 1,2186, gol 2,9813 -> 2,9790; çift gün MS 1,0190 -> 1,0178, aralık 1,2276 -> 1,2260, gol 3,0202 -> 3,0170.
+- C# koduyla 15.855 maçta: tek gün MS 1,0191 -> 1,0180, aralık 1,2278 -> 1,2261; çift gün MS 1,0168 -> 1,0157, aralık 1,2203 -> 1,2194.
+
+## Karar adımı, çaprazlı zincirle (4.610 oranlı maç) · 28.11.2026
+| | Bahis | Tuttu | Yarılar (tuttu / kâr) | Kâr |
+|---|---|---|---|---|
+| Yeni: dilim kuralı (12+ puan, 60+ maç, 1,30+) | 822 | %61,7 | %64,1 / -%10,6 · %59,0 / -%15,7 | -%13,0 |
+| Yeni, yalnız eski programın da baktığı maçlarda | 638 | %62,9 | | -%11,2 |
+| Yeni: dilim + değer şartı (yüzde x oran) | 582 | %51,7 | | -%13,6 (değer şartı tutmayı düşürdü: alınmadı) |
+| Eski program, aynı maçlar (kayıttaki karar, kendi öğrendiği maçlar) | 1.714 | %59,3 | %60,4 / %58,2 | -%12,8 |
+- Aynı maçlarda yeni sistem tutmada +3,6 puan, kârda +1,6 puan önde; iki yarıda da eski programın üstünde.
+- Dilimler: 2,5 Üst %66-86 (iki yarıda aynı), 2,5 Alt %60-72 / %60-80, 3,5 Alt %62-74 / %66-78; KG Var, MS 2, 1,5 Üst tek yarıda.
+- Not: zincirin 6 ayarı aynı dönemin maçlarından öğrenildi (bu maçların bir kısmı dahil); dilimler ise öbür yarıdan.
