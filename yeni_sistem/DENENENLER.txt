@@ -1,0 +1,8 @@
+﻿MAÇ ANALİZ · YENİ SİSTEM · DENENENLER (ayrıntı OKUBENI.md)
+==========================================================
+Alındı: puan tablosu, iç-dış tablo, ilk yarı tablosu, beklenen gol ayarı (Adım 4b), toplam gol ayarı, isabetli şut (Ek 1; programda veri yok),
+        ikili maçlar (Ek 5), çapraz son 15 / son 7 (Ek 7), karar dilimleri 2,5 Üst %66-86 ve 2,5 Alt %60-72 + oran 1,30+.
+Alınmadı: form / seri, dinlenme, yorgunluk, kendi xG ve Flashscore xG zincirde, hava (tutarsız), değer şartı (yüzde x oran; tutmayı düşürdü).
+Kullanıcı kararıyla oynanmaz: 1,5 Üst (oranı ortalama 1,11), 3,5 Alt (oranı çoğunlukla 1,30 altı).
+Veri yetmedi, sonra yeniden: kadro, maçın önemi.
+Şutsuz sınama (program şutu siteden alamıyor): şutlu 468 bahis %63,2, şutsuz 429 bahis %62,5; iki yarıda da dilimler tutuyor.

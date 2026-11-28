@@ -128,11 +128,21 @@ namespace YeniSistem
             calisiyor = true; Hata = "";
             Thread t = new Thread(delegate ()
             {
-                try { Sonuc = Guncelle(klasor); Yaz("Hazır: " + Sonuc.Count + " maç, " + Say(Sonuc, true) + " OYNA · " + DateTime.Now.ToString("HH:mm")); }
+                DateTime bas = DateTime.Now;
+                Gunluk(klasor, "Güncelleme başladı");
+                try { Sonuc = Guncelle(klasor); Yaz("Hazır: " + Sonuc.Count + " maç, " + Say(Sonuc, true) + " OYNA · " + DateTime.Now.ToString("HH:mm") + " (" + Sure(bas) + ")"); }
                 catch (Exception e) { Hata = e.Message; Yaz("Hata: " + e.Message); }
-                finally { calisiyor = false; }
+                finally { Gunluk(klasor, "Güncelleme bitti, " + Sure(bas) + ": " + Durum); calisiyor = false; }
             });
             t.IsBackground = true; t.Start();
+        }
+
+        static string Sure(DateTime bas) { TimeSpan t = DateTime.Now - bas; return t.TotalMinutes >= 1 ? (int)t.TotalMinutes + " dk " + t.Seconds + " sn" : t.Seconds + " sn"; }
+
+        // günlük: kayit\gunluk.txt (anahtar ya da kişisel bilgi yazılmaz)
+        static void Gunluk(string klasor, string s)
+        {
+            try { string k = Path.Combine(klasor, "kayit"); Directory.CreateDirectory(k); File.AppendAllText(Path.Combine(k, "gunluk.txt"), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "  " + s + Environment.NewLine, new UTF8Encoding(true)); } catch { }
         }
 
         static int Say(List<Tahmin> l, bool oyna) { int n = 0; foreach (Tahmin t in l) if (t.Oyna == oyna) n++; return n; }
