@@ -85,3 +85,6 @@ Kayıttaki biz_ sütunları = hücre eklerinden önceki ham Excel yüzdesi.
    (7-10 Üst: Excel %61,2, gerçek %57,1; 0-3 Üst: Excel %41,8, gerçek %49,2). Form geri dönüyor; forma daha çok ağırlık vermek bozardı.
 2. "Beraberlik düşük çıkar" -> **Yanlış.** Excel beraberliği fazla veriyor (%25,3 / gerçek %23,1), en çok gollü maçlarda (%23,1 / %19,6). Kısır maçlarda tam (%27,5 / %27,5).
 3. "Sezon başı ortalamaya yakın" -> **Sınanamadı:** kayıtlarda tabloda 6 maçtan az oynamış lig yok. 21+ maçlık liglerde isabet daha yüksek (2,5 taraf %60,4, KG %60,4).
+
+## 149 / Excel 58
+Gol aralığı 0-1 / 2-3 / 4-5 / 6+ (önce 0-1 / 2-3 / 4-6 / 7+). Değişen: E37, E38 formülleri, etiketler, "100 maçta" J106 / J107, Geçmiş dosyasında I138 / I139.

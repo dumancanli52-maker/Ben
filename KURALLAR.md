@@ -43,3 +43,8 @@ Programın kendi hücre denetiminde (görmediği günler, maç OYNAMA şekli):
 | **4 kural (+ 2,5 Üst)** | **1.636** | **%63,1** | **%64,0 / %62,3** | **%63,4 / %62,8** | **-%5,8** |
 
 4 kuralla bahis türleri: MS 1 217 %67,3 (kâr +%5,3) · MS 2 115 %65,2 (+%3,9) · 2,5 Üst 203 %67,5 (-%2,6) · KG Var 491 %64,4 (-%6,9) · 2,5 Alt 556 %58,3 (-%11,1) · KG Yok 54 %64,8.
+
+## 149. düzeltme: gol aralığı 4-5 / 6+ (28 Kasım 2026)
+- Excel 58'den önce "4-5 gol" hücresi aslında 4-6 gol hesaplıyordu. MS 2 şartı (4-5 gol en az %28) artık gerçek 4-5 gol yüzdesine bakar.
+- Eski kayıtlar çevrilerek kullanılır. Aynı veriyle görmediği günlerde MS 2 şartı: kalan 34 %61,8 / elenen 129 %55,0 (148: kalan 108 %60,2 / elenen 55 %49,1).
+- Sınır %28 eski ölçekte bulundu; yeni kayıtlar birikince yeniden sınanacak.
