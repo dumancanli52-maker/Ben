@@ -73,7 +73,7 @@ namespace YeniSistem
             if (so.EvN >= SutEnAz && so.DepN >= SutEnAz && so.LigN > 0 && so.LigIsb > 0)
             {
                 double sa = (double)so.LigIsb / so.LigN;
-                Func<int, int, double> r = delegate (int top, int n) { return (top + SutDenge * sa) / (n + SutDenge) / sa; };
+                Func<int, int, double> r = delegate (int isb, int n) { return (isb + SutDenge * sa) / (n + SutDenge) / sa; };
                 t.LamEv *= Math.Pow(r(so.EvAt, so.EvN) * r(so.DepYe, so.DepN), SutAgirlik);
                 t.LamDep *= Math.Pow(r(so.DepAt, so.DepN) * r(so.EvYe, so.EvN), SutAgirlik);
                 t.SutKullanildi = true;
