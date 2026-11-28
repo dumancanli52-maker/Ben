@@ -18,12 +18,13 @@ namespace YeniSistem
     {
         public const double OranEnAz = 1.30;
         // bahis anahtarı, ekranda adı, dilim alt, dilim üst (yüzde, 0-1), geçmişte maç, geçmişte tuttu
-        public static readonly string[] Anahtar = new string[] { "15U", "25U", "25A" };
-        public static readonly string[] Ad = new string[] { "1,5 Üst", "2,5 Üst", "2,5 Alt" };
-        public static readonly double[] Alt = new double[] { 0.60, 0.66, 0.60 };
-        public static readonly double[] Ust = new double[] { 0.72, 0.86, 0.72 };
-        public static readonly int[] GecmisMac = new int[] { 79, 178, 290 };
-        public static readonly double[] GecmisTuttu = new double[] { 0.684, 0.640, 0.628 };
+        public static readonly string[] Anahtar = new string[] { "25U", "25A" };
+        public static readonly string[] Ad = new string[] { "2,5 Üst", "2,5 Alt" };
+        public static readonly double[] Alt = new double[] { 0.66, 0.60 };
+        public static readonly double[] Ust = new double[] { 0.86, 0.72 };
+        public static readonly int[] GecmisMac = new int[] { 178, 290 };
+        public static readonly double[] GecmisTuttu = new double[] { 0.640, 0.628 };
+        // 1,5 Üst (dilim %60-72, 79 maç %68,4) de kullanıcının kararıyla oynanmaz: site oranı ortalama 1,11, dilimdeyken bile yalnız %31'i 1,30+; yüzdesi yalnız bilgi.
         // 3,5 Alt (dilim %62-74, 263 maç %64,6) kullanıcının kararıyla oynanacak bahis değil (oranı çoğunlukla 1,30 altı); yüzdesi yalnız bilgi.
         // Destek şartı olarak da sınandı: 2,5 Alt dilimindeki 290 maçın hepsinde 3,5 Alt zaten %78+ (aynı dağılım): ek bilgi yok.
 

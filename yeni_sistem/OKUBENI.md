@@ -201,4 +201,5 @@ Dilimler bütün 4.610 oranlı maçtan öğrenildi (en az 60 maç, en az %62 tut
 1,5 Üst %60-72 (79 maç %68,4) · 2,5 Üst %66-86 (178 maç %64,0) · 2,5 Alt %60-72 (290 maç %62,8) · 3,5 Alt %62-74 (263 maç %64,6).
 MS 1 / 2 ve KG Var / Yok bu çıtayı geçemedi, kurala girmiyor. OYNA: yüzde dilimde + site oranı 1,30+ + tablo kontrolü; maç başı tek bahis.
 Kullanıcının kararıyla (28.11 17:25) 3,5 Alt oynanan bahis değil, yalnız bilgi (oranı çoğunlukla 1,30 altı; destek şartı olarak da ek bilgi vermedi). Liste: 46 OYNA (2,5 Üst 27, 2,5 Alt 17, 1,5 Üst 2).
+Kullanıcının kararıyla 1,5 Üst de oynanmaz (site oranı ortalama 1,11; dilimdeyken bile yalnız %31i 1,30+). Oynanan: 2,5 Üst ve 2,5 Alt. Liste: 44 OYNA (2,5 Üst 27, 2,5 Alt 17).
 İlk uygulama: 28-29 Kasım'ın başlamamış 726 maçı -> 136 OYNA (3,5 Alt 90, 2,5 Üst 27, 2,5 Alt 17, 1,5 Üst 2); tahmin/YeniSistem_OYNA_2026-11-28.xlsx.
