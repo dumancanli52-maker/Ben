@@ -1,0 +1,13 @@
+﻿MAÇ ANALİZ · YENİ SİSTEM · KULLANIM
+====================================
+1. Açılış: program\Baslat.bat çift tıkla. Program açılınca kendiliğinden günceller (üstte sayaç: "Takım listesi: 120 / 4500" gibi).
+2. İlk açılış uzun sürer: önbellek boş, binlerce takım listesi iner (dizüstünde yarım saat - bir saat olabilir). Sonraki açılışlar birkaç dakika.
+3. Güncelle düğmesi: bülteni, tabloları ve takım listelerini yeniler, hesabı baştan yapar. Maç başlamadan önce bir kez basmak yeter.
+4. Maçlar sekmesi: önümüzdeki 36 saatin maçları. OYNA satırları yeşil. "Yalnız OYNA" ile süz, "Ara" ile takım / lig bul.
+   Satıra tıkla: altta kararın nasıl çıktığı (tablo, beklenen gol, destekler, MS, gol aralığı, Alt / Üst, karar).
+5. Sonuçlar sekmesi: verilen bütün OYNA'lar; skor gelince "tuttu / tutmadı", üstte tuttu % ve 1 birimlik kazanç.
+   Sonuç bir sonraki Güncelle'de yazılır. Başlamış maçın tahmini değişmez.
+6. Nasıl karar veriyoruz sekmesi: kuralın kendisi (dilimler, 1,30 süzgeci).
+7. Oynanan bahis yalnız 2,5 Üst ve 2,5 Alt. MS, gol aralıkları, 1,5 Üst, 3,5 Alt yalnız bilgi.
+8. Dosyalar: program\veri (önbellek, silinirse baştan iner), program\kayit\tahminler.csv (bütün tahminler ve sonuçlar), program\kayit\gunluk.txt (güncelleme başı / sonu, süresi).
+9. Yeni sürüm gelince: programı kapat, zip'i aynı yere aç. veri ve kayit klasörleri korunur (zipte yoktur).
