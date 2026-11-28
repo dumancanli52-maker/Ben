@@ -93,3 +93,16 @@ her bahsin sınırı bir yarıda öğrenildi (öğrenilen yarıda %58 altı kapa
   Bahisler: 3,5 Alt 173 %63,0 · 2,5 Üst 134 %59,0 · 2,5 Alt 48 %54,2 · MS 1 28 %50,0 · 1,5 Üst 16 %56,2 · MS 2 15 %40,0.
 - Eski program, aynı maçlar (kayıttaki karar): 1.240 OYNA %59,7; oranı bilinen 546 MS / 2,5 bahsinde kâr -%11,8.
 - Sonuç: yüzde zinciri doğru (kalibre, kıyaslardan iyi) ama yalnız tablolardan gelen bilgiyle bugün karar kuralı eski programı geçmiyor; veri bir ay (2.677 maç), sınırlar oynak.
+
+## Ek 1: İsabetli şut (Ek1_Sut.cs, Adım 4'e bağlı) · sınandı ve alındı 28.11.2026
+- Kaynak: Flashscore maç istatistiği (MAM mac_istatistik.csv). Site maçlarıyla eşleştirme: aynı gün, aynı skor, takım adı benzerliği, tek aday
+  (Aralık'tan beri 61.538 site maçının 51.749'u eşleşti, 110 çok adaylı atıldı; 11.533'ünde şut var). Arşive isb_ev / isb_dep sütunu olarak girer.
+- Hesap: sezon içinde maçtan önceki şutlu maçlardan takımın maç başı attığı / yediği isabetli şut, 8 maçlık lig ortalamasıyla dengeli;
+  ev beklenen golü x (ev şut hücumu x dep şut savunması)^0,35, deplasman tersi. İki takımın da en az 3 şutlu maçı yoksa uygulanmaz.
+- Öğren-sına (iki takımın da 3+ şutlu maçı olan 5.895 maç): öğrenilen ağırlık 0,4 / 0,3, dengeleme 10 / 6 -> ortak 0,35 / 8.
+| | MS hatası | Gol aralığı hatası | Gol hatası |
+|---|---|---|---|
+| tek gün (2.656) | 1,0162 -> 1,0130 | 1,2393 -> 1,2375 | 3,0204 -> 3,0157 |
+| çift gün (3.239) | 1,0229 -> 1,0207 | 1,2202 -> 1,2186 | 2,9588 -> 2,9542 |
+- C# koduyla bütün 15.144 maçta: MS 1,0218 -> 1,0206 (tek), 1,0215 -> 1,0206 (çift); gol aralığı 1,2301 -> 1,2294, 1,2226 -> 1,2220.
+- Canlıda şut bilgisi, programın Flashscore'dan çektiği maç istatistiğine bağlı.

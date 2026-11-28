@@ -19,6 +19,7 @@ namespace YeniSistem
         public double P1, PX, P2;             // MS yüzdeleri (0-1)
         public double[,] Skor;                // skor dağılımı [ev, dep] 0-10 (Adım 5-8 için)
         public int MacEv, MacDep;             // takımların tablodaki maç sayısı
+        public bool SutKullanildi;            // Ek 1 (isabetli şut) uygulandı mı
     }
 
     public static class Adim4
@@ -33,6 +34,10 @@ namespace YeniSistem
         // (Excel hâli toplamda fazla emindi: 0-1 gol %44 dediğinde gerçek %33). Ev / deplasman oranı korunur; MS hatası değişmedi.
         public const double ToplamCarpan = 1.02;
         public const double ToplamYakinlik = 0.4;   // 1 = değişmez, 0 = her maç lig ortalaması
+        // Ek 1 (28.11.2026, öğren-sına, 5.895 maç): isabetli şut. ev beklenen golü x (ev şut hücumu x dep şut savunması)^0,35;
+        // şut oranları 8 maçlık lig ortalamasıyla dengelenir; iki takımın da en az 3 şutlu maçı yoksa uygulanmaz.
+        // İki yarıda da MS, gol aralığı ve gol hatası düştü (OKUBENI.md, Ek 1).
+        public const double SutAgirlik = 0.35, SutDenge = 8.0; public const int SutEnAz = 3;
         public const int EnAzMac = 3;
         public const int MaxGol = 10;
 
@@ -64,6 +69,15 @@ namespace YeniSistem
             t.LamDep = DepCarpan * ((1 - IcDisPay) * depGenel + IcDisPay * depDis);
             double ligTop = 2.0 * ort, top = t.LamEv + t.LamDep;
             if (top > 0) { double r = ToplamCarpan * (ligTop + ToplamYakinlik * (top - ligTop)) / top; t.LamEv *= r; t.LamDep *= r; }
+            SutOzet so = Ek1.Ozet(l, kesim, evId, depId);
+            if (so.EvN >= SutEnAz && so.DepN >= SutEnAz && so.LigN > 0 && so.LigIsb > 0)
+            {
+                double sa = (double)so.LigIsb / so.LigN;
+                Func<int, int, double> r = delegate (int top, int n) { return (top + SutDenge * sa) / (n + SutDenge) / sa; };
+                t.LamEv *= Math.Pow(r(so.EvAt, so.EvN) * r(so.DepYe, so.DepN), SutAgirlik);
+                t.LamDep *= Math.Pow(r(so.DepAt, so.DepN) * r(so.EvYe, so.EvN), SutAgirlik);
+                t.SutKullanildi = true;
+            }
             t.Skor = Dagilim(t.LamEv, t.LamDep);
             for (int i = 0; i <= MaxGol; i++) for (int j = 0; j <= MaxGol; j++) { double p = t.Skor[i, j]; if (i > j) t.P1 += p; else if (i == j) t.PX += p; else t.P2 += p; }
             t.Gecerli = true;

@@ -5,7 +5,7 @@
 # Çıktı: CSV (MS, gol aralıkları, Alt / Üst, beklenen gol). PowerShell 5.1.
 param([string]$Kod, [string]$Arsiv, [string]$Maclar, [string]$Cache, [string]$Kesim, [string]$Cikti)
 
-Add-Type -Path @("$Kod/Adim1_PuanTablosu.cs", "$Kod/Adim2_IcDisTablosu.cs", "$Kod/Adim3_IlkYari.cs", "$Kod/Adim4_MacSonucu.cs", "$Kod/Adim5_GolAraligi.cs", "$Kod/Adim9_AltUst.cs") -WarningAction SilentlyContinue
+Add-Type -Path @("$Kod/Adim1_PuanTablosu.cs", "$Kod/Adim2_IcDisTablosu.cs", "$Kod/Adim3_IlkYari.cs", "$Kod/Adim4_MacSonucu.cs", "$Kod/Adim5_GolAraligi.cs", "$Kod/Adim9_AltUst.cs", "$Kod/Ek1_Sut.cs") -WarningAction SilentlyContinue
 $inv = [Globalization.CultureInfo]::InvariantCulture
 $lig = [YeniSistem.Adim1]::ArsivOku($Arsiv)
 $byKey = @{}; foreach ($k in $lig.Keys) { $p = $k.Split('|')[0].Trim(); $sea = $k.Substring($k.LastIndexOf(' ') + 1); $byKey[$p + '#' + $sea] = $k }

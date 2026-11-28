@@ -19,6 +19,7 @@ namespace YeniSistem
         public int GolEv, GolDep;
         public int IyEv = -1, IyDep = -1;   // ilk yarı skoru (arşivde yoksa -1): Adım 3
         public bool SezonEtiketli;          // site arşivi: lig anahtarında sezon var, sezon tahmin edilmez
+        public int IsbEv = -1, IsbDep = -1;   // isabetli şut (Flashscore istatistiği; yoksa -1): Ek 1
     }
 
     public sealed class Satir
@@ -59,6 +60,7 @@ namespace YeniSistem
             int iL = Array.IndexOf(bas, "lig"), iU = Array.IndexOf(bas, "ulke");
             int iIe = Array.IndexOf(bas, "iy_ev"), iId2 = Array.IndexOf(bas, "iy_dep");   // site arşivinde var (Adım 3)
             bool etiket = Array.IndexOf(bas, "sezon") >= 0;
+            int iSe = Array.IndexOf(bas, "isb_ev"), iSd = Array.IndexOf(bas, "isb_dep");
             for (int k = 1; k < satirlar.Length; k++)
             {
                 string[] c = satirlar[k].Split(';');
@@ -74,6 +76,8 @@ namespace YeniSistem
                 m.GolEv = ge; m.GolDep = gd; m.Lig = c[iU] + " | " + c[iL]; m.SezonEtiketli = etiket;
                 int ie, id;
                 if (iIe >= 0 && iId2 >= 0 && int.TryParse(c[iIe], out ie) && int.TryParse(c[iId2], out id) && ie >= 0 && id >= 0 && ie <= ge && id <= gd) { m.IyEv = ie; m.IyDep = id; }
+                int se, sd;
+                if (iSe >= 0 && iSd >= 0 && iSe < c.Length && iSd < c.Length && int.TryParse(c[iSe], out se) && int.TryParse(c[iSd], out sd) && se >= 0 && sd >= 0 && se >= ge && sd >= gd) { m.IsbEv = se; m.IsbDep = sd; }
                 List<Mac> l; if (!lig.TryGetValue(m.Lig, out l)) { l = new List<Mac>(); lig[m.Lig] = l; }
                 l.Add(m);
             }
