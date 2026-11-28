@@ -39,3 +39,13 @@ site arşivinde sezon etiketten alınır (tahmin edilmez), gruplu liglerde tablo
   genel %84,6, iç saha %90,8, dış saha %90,8 birebir. Kalan fark iki türlü:
   - sitenin takım listelerinde bazı maçlar hiç yok (ör. Cymru Güney: site tablosu 112 maç, 16 takımın listeleri birlikte 107);
   - sezon içinde ikinci aşama olan liglerde (Kadınlar Premier Lig, Ulusal Lig) site yalnız güncel aşamanın tablosunu gösteriyor.
+
+## Adım 4: Maç sonucu (Adim4_MacSonucu.cs) · sınandı 28.11.2026
+- Excel motorunun çekirdeği (kadro çarpanı ve gerçek skor karışımı yok): 12 maçlık lig ortalamasıyla dengeli hücum / savunma,
+  %50 genel + %50 iç / dış, iki bağımsız Poisson -> skor dağılımı (Adım 5-8 de bunu kullanacak) -> MS 1 / X / 2. Takımların en az 3 maçı olmalı.
+- Sınama: tablosu tam 180 lig-sezonun 15.144 maçı (Şubat - Kasım 2026), her maç kendinden önceki maçlarla:
+  - log-kayıp 1,0313 (yarılar 1,0307 / 1,0319); basit kıyas (ligin o güne kadarki ev / beraberlik / deplasman oranı) 1,0767. Açıkça daha iyi.
+  - en olası sonuç %48,3 tuttu.
+  - **Yüzdeler fazla temkinli:** ortalamada MS 1 %40,8 diyor, gerçek %43,8 (ev avantajı az veriliyor); MS 2 %34,4 diyor, gerçek %31,1.
+    MS 1 %54 dediğinde gerçek %63, %64 dediğinde %77; MS 2 %17 dediğinde %10. Uçlar yeterince açılmıyor (12 maçlık dengeleme ağır).
+- İlk yarı (Adım 3) MS'ye bir şey katıyor mu: aynı MS 1 bandında ilk yarı güçlü / zayıf ayrımı tutarlı bir fark vermedi (fark temkinlilikten). Katmıyor.
