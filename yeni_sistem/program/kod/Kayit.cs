@@ -78,7 +78,13 @@ namespace YeniSistem
             foreach (Tahmin t in l) sb.AppendLine(Satir(t));
             string gecici = yol + ".yeni";
             File.WriteAllText(gecici, sb.ToString(), new UTF8Encoding(true));
-            if (File.Exists(yol)) File.Replace(gecici, yol, null); else File.Move(gecici, yol);
+            // ekran / telefon o an okuyor olabilir: üç kez denenir
+            for (int d = 0; ; d++)
+            {
+                try { if (File.Exists(yol)) File.Replace(gecici, yol, null); else File.Move(gecici, yol); return; }
+                catch (IOException) { if (d >= 2) throw; System.Threading.Thread.Sleep(500 * (d + 1)); }
+                catch (UnauthorizedAccessException) { if (d >= 2) throw; System.Threading.Thread.Sleep(500 * (d + 1)); }
+            }
         }
 
         public static bool BahisTuttu(string bahis, int ev, int dep)
