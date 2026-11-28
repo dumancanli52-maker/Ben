@@ -138,3 +138,9 @@ Veri: iki takımın da en az 8 lig maçı olan 8.316 maç; taban = zincirin bug�
   iki sınanan yarıda da MS bozuldu (1,0111 -> 1,0122; 1,0047 -> 1,0054).
 - Ev / deplasman başarısı zaten Adım 2 (iç / dış tablo) olarak zincirde.
 - Sonuç: tablo ve şut zincirdeyken son maç formu bir şey katmıyor (eski sistemde de form "geri dönüyordu").
+
+## Ek 4: Takım güç karnesi · kadro gücü ve eksik oyuncu · 28.11.2026 · ŞİMDİLİK ALINMADI (veri az)
+Kaynak: MAM kadro_gecmis.csv (programın Kasım'da analiz ettiği maçlar); yeni arşivle eşleşen 2.676 maçta kadro gücü (ilk 11 / düzenli 11) 784, eksik golü 543 maçta.
+- Kadro gücü (güçlü 11 çıkaranın beklenen golü artar, rakibinki azalır): öğrenilen ağırlık 0,25 / 0. 0,25 sınanan 371 maçta MS 0,9965 -> 0,9992, gol 2,8401 -> 2,8445 (bozdu).
+- Eksiklerin golü (golcüsü eksik takımın beklenen golü azalır): öğrenilen 0 / 0,02. 0,02 sınanan 282 maçta MS 0,9977 -> 0,9997, aralık 1,2855 -> 1,2913 (bozdu).
+- Sonuç: yarı başına 260-410 maçla katkı görünmüyor. "İşe yaramaz" denmedi: kadro kaydı biriktikçe (en az birkaç bin maç) aynı yöntemle yeniden sınanacak.
