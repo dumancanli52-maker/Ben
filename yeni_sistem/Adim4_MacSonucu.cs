@@ -1,6 +1,6 @@
 // YENİ SİSTEM · ADIM 4: MAÇ SONUCU (MS 1 / X / 2)
 // Adım 1-2'nin tablolarından (maçtan ÖNCEKİ maçlar, takımın grubu) iki takımın beklenen golü, oradan skor dağılımı ve MS yüzdeleri.
-// Hesap kullanıcının Excel motorunun çekirdeği (MOTOR_MANTIGI.md, bölüm 2-3), kadro çarpanı ve gerçek skor karışımı olmadan:
+// Hesap kullanıcının Excel motorunun çekirdeği (MOTOR_MANTIGI.md, bölüm 2-3), kadro çarpanı ve gerçek skor karışımı olmadan, Adım 4b ayarıyla:
 //   lig ortalaması: takım başı maç başı gol (genel), iç saha maç başı ev golü, dış saha maç başı deplasman golü
 //   oran = (gol + 12 x lig ort.) / (maç + 12)            (az maçlı takım lig ortalamasına çekilir)
 //   genel taban (ev) = oran(ev attı) x oran(dep yedi) / lig ort.     iç/dış taban (ev) = oran(ev iç attı) x oran(dep dış yedi) / iç saha ort.
@@ -23,8 +23,12 @@ namespace YeniSistem
 
     public static class Adim4
     {
-        public const double Denge = 12.0;    // Excel CF2
-        public const double IcDisPay = 0.5;  // Excel CG2
+        // Ayar (Adım 4b, 28.11.2026): tek günlerden öğrenilip çift günlerde, çift günlerden öğrenilip tek günlerde sınandı.
+        // Excel'deki 12 maç / %50 / çarpansız hâl fazla temkinliydi (MS 1 %64 dediğinde gerçek %77). İki yarıda da MS ve gol hatası düştü.
+        public const double Denge = 6.0;       // Excel CF2 = 12
+        public const double IcDisPay = 0.25;   // Excel CG2 = 0,5
+        public const double EvCarpan = 1.05;   // ev sahibinin beklenen golü
+        public const double DepCarpan = 0.925; // deplasmanın beklenen golü
         public const int EnAzMac = 3;
         public const int MaxGol = 10;
 
@@ -52,8 +56,8 @@ namespace YeniSistem
             // iç / dış taban (iç saha maçı yoksa 0 maçla: lig ortalamasına eşit)
             double evIc = Oran(ei == null ? 0 : ei.A, ei == null ? 0 : ei.O, icOrt) * Oran(dd == null ? 0 : dd.Y, dd == null ? 0 : dd.O, icOrt) / icOrt;
             double depDis = Oran(dd == null ? 0 : dd.A, dd == null ? 0 : dd.O, disOrt) * Oran(ei == null ? 0 : ei.Y, ei == null ? 0 : ei.O, disOrt) / disOrt;
-            t.LamEv = (1 - IcDisPay) * evGenel + IcDisPay * evIc;
-            t.LamDep = (1 - IcDisPay) * depGenel + IcDisPay * depDis;
+            t.LamEv = EvCarpan * ((1 - IcDisPay) * evGenel + IcDisPay * evIc);
+            t.LamDep = DepCarpan * ((1 - IcDisPay) * depGenel + IcDisPay * depDis);
             t.Skor = Dagilim(t.LamEv, t.LamDep);
             for (int i = 0; i <= MaxGol; i++) for (int j = 0; j <= MaxGol; j++) { double p = t.Skor[i, j]; if (i > j) t.P1 += p; else if (i == j) t.PX += p; else t.P2 += p; }
             t.Gecerli = true;

@@ -49,3 +49,13 @@ site arşivinde sezon etiketten alınır (tahmin edilmez), gruplu liglerde tablo
   - **Yüzdeler fazla temkinli:** ortalamada MS 1 %40,8 diyor, gerçek %43,8 (ev avantajı az veriliyor); MS 2 %34,4 diyor, gerçek %31,1.
     MS 1 %54 dediğinde gerçek %63, %64 dediğinde %77; MS 2 %17 dediğinde %10. Uçlar yeterince açılmıyor (12 maçlık dengeleme ağır).
 - İlk yarı (Adım 3) MS'ye bir şey katıyor mu: aynı MS 1 bandında ilk yarı güçlü / zayıf ayrımı tutarlı bir fark vermedi (fark temkinlilikten). Katmıyor.
+
+## Adım 4b: Maç sonucu ayarı · sınandı 28.11.2026
+Ayarlanan: dengeleme maç sayısı, iç / dış saha payı, ev ve deplasman beklenen gol çarpanı. Tek günlerden öğrenilip çift günlerde, çift günlerden öğrenilip tek günlerde sınandı.
+İki öğrenmede de dengeleme 6 maç, iç / dış payı %25 çıktı; ev çarpanı 1,05 / 1,00, deplasman 0,925 / 0,90. Seçilen: **6 maç, %25, ev 1,05, deplasman 0,925.**
+| | MS hatası (tek / çift) | Gol hatası (tek / çift) | MS 1 ort. dedi / gerçek |
+|---|---|---|---|
+| Excel hâli (12, %50, 1, 1) | 1,0307 / 1,0319 | 3,0496 / 3,0059 | %40,8 / %43,8 |
+| Ayarlı | 1,0222 / 1,0208 | 3,0459 / 2,9987 | %42,8 / %43,8 |
+Kalibrasyon (ayarlı): MS 1 %50+ dedi %55 gerçek %56 · %60+ %64 / %64 · %70+ %76 / %79; MS 2 %50+ %54 / %54 · %60+ %64 / %64.
+En olası sonuç %48,3 -> %48,9. Ortalama gol 2,80 diyor, gerçek 2,88 (gol aralıklarında ayrıca bakılacak). C# koduyla yeniden ölçüldü: aynı.
