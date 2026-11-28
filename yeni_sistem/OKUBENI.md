@@ -24,3 +24,18 @@ Kod C# 5 (PowerShell 5.1 Add-Type ile derlenir).
   - iç + dış = genel: 30 / 30 ligde tuttu; arşivdeki bütün 1.400 ligde de tuttu (0 bozuk).
   - İç saha: 551 satırın 491'i sitedekiyle birebir, 54'ünde sitede 1 maç fazla (son maç arşivde yok), 6 açıklanamayan.
   - Dış saha: 549 satırın 494'ü birebir, 49'unda 1 maç fazla, 6 açıklanamayan.
+
+## Kaynak değişikliği: site maç arşivi (SiteArsivi.ps1)
+Adım 3 için ilk yarı skoru gerekiyor; Flashscore arşivinde yok. Sitenin takım maç listeleri (Excel motorunun da kullandığı kaynak) her maç için
+maç sonu ve ilk yarı skoru, lig numarası ve sezon adı veriyor. SiteArsivi.ps1 bu listeleri site_maclari.csv'ye çevirir. Adım 1-3 iki arşivi de okur;
+site arşivinde sezon etiketten alınır (tahmin edilmez), gruplu liglerde tablo takımın kendi grubundan kurulur (birbiriyle oynayan takımlar).
+**Kural:** bir maçın tablosu için o ligdeki BÜTÜN takımların listesi gerekir (yalnız iki takımın listesiyle tablo eksik kalır).
+
+## Adım 3: İlk yarı tablosu (Adim3_IlkYari.cs) · sınandı 28.11.2026
+- Genel, iç saha, dış saha: ilk yarısı bilinen maç, ilk yarıda önde / berabere / geride, ilk yarıda atılan / yenilen, ilk yarısı gollü (1+) ve 2+ gollü maç.
+- Kendi denetimi (önde + berabere + geride = maç; ilk yarı golü maç sonunu geçmez; iç + dış = genel): 1.146 lig-sezonun hepsinde tuttu.
+- İlk yarı skoru maçların %78'inde var (120.622 maçın 94.047'si).
+- Site arşiviyle Adım 1-2 yeniden sınandı (180 site tablosu, 2.895 takımın listesi, takım numarasıyla birebir karşılaştırma):
+  genel %84,6, iç saha %90,8, dış saha %90,8 birebir. Kalan fark iki türlü:
+  - sitenin takım listelerinde bazı maçlar hiç yok (ör. Cymru Güney: site tablosu 112 maç, 16 takımın listeleri birlikte 107);
+  - sezon içinde ikinci aşama olan liglerde (Kadınlar Premier Lig, Ulusal Lig) site yalnız güncel aşamanın tablosunu gösteriyor.

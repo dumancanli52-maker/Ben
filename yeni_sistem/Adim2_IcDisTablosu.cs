@@ -17,23 +17,26 @@ namespace YeniSistem
 
     public static class Adim2
     {
-        public static IcDis Kur(List<Mac> l, DateTime kesim)
+        public static IcDis Kur(List<Mac> l, DateTime kesim) { return Kur(l, kesim, null); }
+        public static IcDis Kur(List<Mac> l, DateTime kesim, string takim)   // takim: gruplu ligde o takımın grubu
         {
             IcDis s = new IcDis();
-            s.Genel = Adim1.Kur(l, kesim);
+            s.Genel = Adim1.Kur(l, kesim, takim);
             s.Ic.Lig = s.Dis.Lig = s.Genel.Lig; s.Ic.Kesim = s.Dis.Kesim = kesim;
             s.Ic.Baslangic = s.Dis.Baslangic = s.Genel.Baslangic;
             int son = 0; while (son < l.Count && l[son].Zaman < kesim) son++;
             if (son == 0) { s.Tutarli = true; return s; }
             int bas = Adim1.SezonBasi(l, son);
+            HashSet<string> grup = takim == null ? null : Adim1.Grup(l, bas, son, takim);
             for (int i = bas; i < son; i++)
             {
                 Mac m = l[i];
+                if (grup != null && !grup.Contains(m.EvId)) continue;
                 Satir e = Al(s.Ic, m.EvId, m.Ev), d = Al(s.Dis, m.DepId, m.Dep);
                 e.O++; d.O++; e.A += m.GolEv; e.Y += m.GolDep; d.A += m.GolDep; d.Y += m.GolEv;
                 if (m.GolEv > m.GolDep) { e.G++; d.M++; } else if (m.GolEv < m.GolDep) { d.G++; e.M++; } else { e.B++; d.B++; }
             }
-            s.Ic.MacSayisi = s.Dis.MacSayisi = son - bas;
+            s.Ic.MacSayisi = s.Dis.MacSayisi = s.Genel.MacSayisi;
             Sirala(s.Ic); Sirala(s.Dis);
             // denetim: iç + dış = genel (her takım)
             s.Tutarli = true;
