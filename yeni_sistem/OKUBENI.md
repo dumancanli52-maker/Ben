@@ -120,3 +120,12 @@ her bahsin sınırı bir yarıda öğrenildi (öğrenilen yarıda %58 altı kapa
 | çift gün (3.239) | 1,0229 -> 1,0207 | 1,2202 -> 1,2186 | 2,9588 -> 2,9542 |
 - C# koduyla bütün 15.144 maçta: MS 1,0218 -> 1,0206 (tek), 1,0215 -> 1,0206 (çift); gol aralığı 1,2301 -> 1,2294, 1,2226 -> 1,2220.
 - Canlıda şut bilgisi, programın Flashscore'dan çektiği maç istatistiğine bağlı.
+
+## Ek 2: Kendi xG'miz (Ek2_xG.cs) · 28.11.2026 · KAYIT VE GÖSTERİM, ZİNCİRE GİRMEDİ
+- Oluşturma (23.078 takım-maç, öğren-sına; iki yarıda katsayılar aynı):
+  büyük fırsat varsa xG = 0,246 x isabetli - 0,045 x isabetsiz + 0,25 x büyük fırsat (ceza sahası içi şut katkısız); yoksa xG = 0,315 x isabetli.
+- Maç içinde golle ilişki: zengin xG 0,665, Flashscore xG 0,58 (ama bu aynı maçın goluyla, kısmen kendiliğinden yüksek).
+- Asıl sınav (takımın geçmiş xG'si sonraki maçın golünü söylüyor mu, 5.959 maç; Flashscore xG'li 2.821):
+  - kendi xG ≈ isabetli şut (Ek 1): ek bilgi yok;
+  - Flashscore xG tek başına şuttan biraz iyi, ama şut zincirdeyken eklenince: tek gün MS 1,0138 -> 1,0141 (kötü), çift gün 1,0248 -> 1,0243 (iyi): tutarsız.
+- Karar: kendi xG'miz her maç için hesaplanır ve kaydedilir (arşive isz_ / bf_ sütunları, Mac.IszEv / BfEv), ekranda gösterilebilir; yüzdelere karışmaz.
