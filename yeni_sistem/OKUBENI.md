@@ -68,3 +68,16 @@ En olası sonuç %48,3 -> %48,9. Ortalama gol 2,80 diyor, gerçek 2,88 (gol aral
 - Sonuç (15.144 maç, C# koduyla): gol aralığı hatası tek gün 1,2439 -> 1,2301, çift gün 1,2355 -> 1,2226; MS hatası değişmedi (1,0218 / 1,0215).
   Ortalama: 0-1 %22,8 (gerçek %22,6) · 2-3 %44,4 (%44,8) · 4-5 %24,8 (%24,9) · 6+ %8,0 (%7,8); beklenen toplam gol 2,88 (gerçek 2,88).
   Kalan kusur: en uçtaki "kısır maç" tahmini (0-1 gol %43+ dediği 366 maç) hâlâ iyimser (%43 -> %36, %54 -> %38).
+
+## Adım 9-12: Aralıktan çıkan Alt / Üst (Adim9_AltUst.cs) · sınandı 28.11.2026
+- Skor dağılımından 1,5 / 2,5 / 3,5 / 4,5 Üst (Alt = 1 - Üst); en olası aralık ve şemadaki bahisleri.
+- Sınama (15.144 maç; "sabit oran" = öbür yarının ortalama Üst oranı, öğren-sına):
+| | Dedi ort. / gerçek | Hata tek (sabit oran) | Hata çift (sabit oran) |
+|---|---|---|---|
+| 1,5 Üst | %77,2 / %77,4 | 0,5176 (0,5271) | 0,5373 (0,5409) |
+| 2,5 Üst | %54,3 / %54,6 | 0,6802 (0,6875) | 0,6782 (0,6907) |
+| 3,5 Üst | %32,8 / %32,7 | 0,6238 (0,6328) | 0,6192 (0,6310) |
+| 4,5 Üst | %17,2 / %17,4 | 0,4695 (0,4747) | 0,4394 (0,4512) |
+  Dört çizgi de iki yarıda sabit orandan iyi; ortalamalar gerçeğe oturuyor. Uçlarda hafif iyimserlik (2,5 Üst %74 -> %70, %26 -> %39).
+- Şemanın "en olası aralık -> bahis" bağlantısı: en olası aralık 15.144 maçın 14.485'inde 2-3 gol (seçici değil).
+  4-5 en olası (471 maç): 2,5 Üst %74,9, 3,5 Üst %55,0 · 0-1 en olası (183): 1,5 Alt %38,3, 2,5 Alt %63,9 · 6+ (5 maç).
