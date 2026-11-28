@@ -81,3 +81,15 @@ En olası sonuç %48,3 -> %48,9. Ortalama gol 2,80 diyor, gerçek 2,88 (gol aral
   Dört çizgi de iki yarıda sabit orandan iyi; ortalamalar gerçeğe oturuyor. Uçlarda hafif iyimserlik (2,5 Üst %74 -> %70, %26 -> %39).
 - Şemanın "en olası aralık -> bahis" bağlantısı: en olası aralık 15.144 maçın 14.485'inde 2-3 gol (seçici değil).
   4-5 en olası (471 maç): 2,5 Üst %74,9, 3,5 Üst %55,0 · 0-1 en olası (183): 1,5 Alt %38,3, 2,5 Alt %63,9 · 6+ (5 maç).
+
+## İleriye dönük sınama başladı (28.11.2026 15:55, ilk maçlardan önce)
+Tahmin.ps1 ile 28-29 Kasım'ın başlamamış 818 maçı: 745'i hesaplandı (57 sitede tablo yok, 11 takım tabloda yok, 5 tablo eksik).
+Kayıt: tahmin/yeni_sistem_tahmin_2026-11-28.csv (depoya 15:55 TR'de gönderildi). Maçlar bitince gerçekle, eski programla ve Claude'un sabahki tahminleriyle karşılaştırılacak.
+
+## Karar sınaması (geçmiş maçlar, oranlı) · 28.11.2026 · SİSTEME KONMADI
+MAM'ın sonuçlu maçlarından 2.677'si yeni arşivle eşleşti (tablosu tam liglerde). Bahisler: MS 1 / 2, 1,5 / 2,5 / 3,5 Alt-Üst; site oranı 1,30+;
+her bahsin sınırı bir yarıda öğrenildi (öğrenilen yarıda %58 altı kapalı), öbür yarıda denendi; maç başı tek bahis.
+- Yeni sistem: 414 bahis %58,7 (yarılar %67,1 / %53,5), ort. oran 1,42, kâr -%17,3. Öğrenilen sınırlar iki yarıda çok farklı (tutarsız).
+  Bahisler: 3,5 Alt 173 %63,0 · 2,5 Üst 134 %59,0 · 2,5 Alt 48 %54,2 · MS 1 28 %50,0 · 1,5 Üst 16 %56,2 · MS 2 15 %40,0.
+- Eski program, aynı maçlar (kayıttaki karar): 1.240 OYNA %59,7; oranı bilinen 546 MS / 2,5 bahsinde kâr -%11,8.
+- Sonuç: yüzde zinciri doğru (kalibre, kıyaslardan iyi) ama yalnız tablolardan gelen bilgiyle bugün karar kuralı eski programı geçmiyor; veri bir ay (2.677 maç), sınırlar oynak.
