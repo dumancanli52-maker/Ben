@@ -1,4 +1,4 @@
-# YENİ SİSTEM · TAHMİN (Adım 1-12 birlikte, OYNA YOK)
+﻿# YENİ SİSTEM · TAHMİN (Adım 1-12 birlikte, OYNA YOK)
 # Girdi: maç listesi (JSON: kod, saat) + sitenin o maçlar için Header / LeagueTable cevapları (klasörde) + site_maclari.csv.
 # Her maç için: lig ve sezon sitenin Header'ından; tablolar arşivden (kesim anından önceki maçlar, takımın grubu);
 # tablo kontrolü: iki takımın arşivdeki maç sayısı sitenin tablosuyla en çok 1 farklı olmalı, değilse "tablo eksik" (hesap yapılmaz).

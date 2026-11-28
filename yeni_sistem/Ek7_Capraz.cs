@@ -1,4 +1,4 @@
-// YENİ SİSTEM · EK 7: ÇAPRAZ (kullanıcının yöntemi, sıfırdan) · öğren-sına ile alındı (OKUBENI.md, Ek 7)
+﻿// YENİ SİSTEM · EK 7: ÇAPRAZ (kullanıcının yöntemi, sıfırdan) · öğren-sına ile alındı (OKUBENI.md, Ek 7)
 // Her takımın maçtan ÖNCEKİ son 15 maçı (her turnuva, genel) ve evde / deplasmanda son 7 maçı (iç-dış):
 //   çapraz ev golü = (ev attı + dep yedi) / 2 ; çapraz dep golü = (dep attı + ev yedi) / 2   (genel ve iç-dış ayrı, yarı yarıya)
 //   beklenen gol = zincirin beklenen golü^(1 - 0,2) x çapraz^0,2

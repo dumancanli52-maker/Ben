@@ -1,4 +1,4 @@
-// YENİ SİSTEM · ADIM 4: MAÇ SONUCU (MS 1 / X / 2)
+﻿// YENİ SİSTEM · ADIM 4: MAÇ SONUCU (MS 1 / X / 2)
 // Adım 1-2'nin tablolarından (maçtan ÖNCEKİ maçlar, takımın grubu) iki takımın beklenen golü, oradan skor dağılımı ve MS yüzdeleri.
 // Hesap kullanıcının Excel motorunun çekirdeği (MOTOR_MANTIGI.md, bölüm 2-3), kadro çarpanı ve gerçek skor karışımı olmadan, Adım 4b ayarıyla:
 //   lig ortalaması: takım başı maç başı gol (genel), iç saha maç başı ev golü, dış saha maç başı deplasman golü

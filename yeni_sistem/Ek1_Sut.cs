@@ -1,4 +1,4 @@
-// YENİ SİSTEM · EK 1: İSABETLİ ŞUT (aday, sınanıyor)
+﻿// YENİ SİSTEM · EK 1: İSABETLİ ŞUT (aday, sınanıyor)
 // Sezon içinde maçtan ÖNCEKİ ve şut bilgisi olan maçlardan: her takımın maç başı attığı / yediği isabetli şut, lig ortalaması.
 // Kullanım (sınamada ağırlık bulunur): ev beklenen golü x (ev şut hücumu x dep şut savunması)^w, deplasman tersi.
 // C# 5.

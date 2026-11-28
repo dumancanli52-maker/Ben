@@ -1,4 +1,4 @@
-// YENİ SİSTEM · ADIM 2: İÇ SAHA / DIŞ SAHA TABLOSU
+﻿// YENİ SİSTEM · ADIM 2: İÇ SAHA / DIŞ SAHA TABLOSU
 // Adım 1'in sezonu ve maçlarıyla: her takımın yalnız evinde oynadığı maçlardan iç saha tablosu, yalnız deplasmanda oynadıklarından dış saha tablosu.
 // Her ikisi de o maçtan ÖNCEKİ maçlarla kurulur. Denetim: her takımda iç saha + dış saha = genel tablo (Adım 1).
 // Bu adım karar vermez (OYNA yok). C# 5.

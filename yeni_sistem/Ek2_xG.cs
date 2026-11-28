@@ -1,4 +1,4 @@
-// YENİ SİSTEM · EK 2: KENDİ xG'MİZ (kayıt ve gösterim; yüzde zincirine GİRMEZ)
+﻿// YENİ SİSTEM · EK 2: KENDİ xG'MİZ (kayıt ve gösterim; yüzde zincirine GİRMEZ)
 // Kullanıcının 8. şartı: xG kaydı ve kendi xG'mizi oluşturma.
 // Formül (28.11.2026, 23.078 takım-maç, tek / çift gün öğren-sına; iki yarıda katsayılar aynı çıktı):
 //   büyük fırsat bilgisi varsa: xG = 0,246 x isabetli şut - 0,045 x isabetsiz şut + 0,25 x büyük fırsat (ceza sahası içi şutun katkısı yok)

@@ -1,4 +1,4 @@
-// YENİ SİSTEM · ADIM 5-8: GOL ARALIKLARI (0-1 / 2-3 / 4-5 / 6+)
+﻿// YENİ SİSTEM · ADIM 5-8: GOL ARALIKLARI (0-1 / 2-3 / 4-5 / 6+)
 // Ayrı model değil: Adım 4'ün skor dağılımından okunur. MS ile gol aralıkları hep aynı hesaptan çıkar, birbirini tutar.
 // Toplam gol ayarı (lig ortalamasına yaklaştırma, x 1,02) Adım 4'te yapılır (sınaması OKUBENI.md, Adım 5).
 // Bu adım karar vermez (OYNA yok). C# 5.

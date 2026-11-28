@@ -1,4 +1,4 @@
-// YENİ SİSTEM · ADIM 1: PUAN TABLOSU
+﻿// YENİ SİSTEM · ADIM 1: PUAN TABLOSU
 // Kaynak: maç arşivi: mac_sonuclari.csv (Flashscore) ya da site_maclari.csv (sitenin takım listeleri, SiteArsivi.ps1; ilk yarı skoruyla). Her maç için tablo, o maçtan ÖNCEKİ maçlarla kurulur (geleceğe bakmaz).
 // Sezon: ligin maçları geriye doğru okunur; 25 günden uzun bir aradan geriye ancak aradan önceki ve sonraki takım listesi aynıysa geçilir
 // (kış arası, Dünya Kupası arası aynı sezon; düşen / çıkan takım değiştiyse yeni sezon).
@@ -55,7 +55,7 @@ namespace YeniSistem
             HashSet<string> gorulen = new HashSet<string>();
             string[] satirlar = File.ReadAllLines(yol, Encoding.UTF8);
             if (satirlar.Length == 0) return lig;
-            string[] bas = satirlar[0].TrimStart('﻿').Split(';');
+            string[] bas = satirlar[0].TrimStart('\uFEFF').Split(';');
             int iId = Array.IndexOf(bas, "mac_id"), iZ = Array.IndexOf(bas, "zaman"), iE = Array.IndexOf(bas, "ev_id"), iD = Array.IndexOf(bas, "dep_id");
             int iEa = Array.IndexOf(bas, "ev"), iDa = Array.IndexOf(bas, "dep"), iGe = Array.IndexOf(bas, "gol_ev"), iGd = Array.IndexOf(bas, "gol_dep");
             int iL = Array.IndexOf(bas, "lig"), iU = Array.IndexOf(bas, "ulke");

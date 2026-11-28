@@ -1,4 +1,4 @@
-// YENİ SİSTEM · ADIM 3: İLK YARI TABLOSU
+﻿// YENİ SİSTEM · ADIM 3: İLK YARI TABLOSU
 // Adım 1'in ligi ve sezonuyla, maçtan ÖNCEKİ maçların ilk yarı skorlarından: genel, iç saha (takımın evindeki maçlar), dış saha.
 // Her takım için: ilk yarısı bilinen maç sayısı, ilk yarıda önde / berabere / geride, ilk yarıda attığı / yediği gol,
 // ilk yarısı gollü geçen maç (en az 1 gol) ve en az 2 gollü maç sayısı.

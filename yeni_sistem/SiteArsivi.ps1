@@ -1,4 +1,4 @@
-# YENİ SİSTEM · SİTE MAÇ ARŞİVİ
+﻿# YENİ SİSTEM · SİTE MAÇ ARŞİVİ
 # Sitenin takım maç listelerinden (Team/<takım>/Matches cevapları, klasörde JSON) tek maç arşivi yazar:
 # site_maclari.csv: mac_id;zaman;ev_id;dep_id;ev;dep;gol_ev;gol_dep;iy_ev;iy_dep;lig;ulke;sezon;asama
 #   ulke sütununa ligin site kimliği, lig sütununa "lig adı sezon" yazılır: Adım 1 ligi ve sezonu buradan ayırır (sezon tahmini gerekmez).

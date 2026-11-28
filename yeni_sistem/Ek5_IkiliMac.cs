@@ -1,4 +1,4 @@
-// YENİ SİSTEM · EK 5: İKİLİ MAÇLAR (maç karnesi) · öğren-sına ile alındı (OKUBENI.md, Ek 5)
+﻿// YENİ SİSTEM · EK 5: İKİLİ MAÇLAR (maç karnesi) · öğren-sına ile alındı (OKUBENI.md, Ek 5)
 // İki takımın maçtan ÖNCEKİ aralarındaki son 5 maçı (her turnuva), en az 2 maç:
 //   gol farkı ortalaması (ev sahibinin gözünden) -> ev beklenen golü x e^(0,1 x fark x d), deplasman x e^(-0,1 x fark x d)
 //   toplam gol ortalaması -> iki beklenen gol x e^(0,1 x (ikili toplam - beklenen toplam) x d)

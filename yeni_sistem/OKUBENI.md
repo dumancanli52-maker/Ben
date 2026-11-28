@@ -203,3 +203,22 @@ MS 1 / 2 ve KG Var / Yok bu çıtayı geçemedi, kurala girmiyor. OYNA: yüzde d
 Kullanıcının kararıyla (28.11 17:25) 3,5 Alt oynanan bahis değil, yalnız bilgi (oranı çoğunlukla 1,30 altı; destek şartı olarak da ek bilgi vermedi). Liste: 46 OYNA (2,5 Üst 27, 2,5 Alt 17, 1,5 Üst 2).
 Kullanıcının kararıyla 1,5 Üst de oynanmaz (site oranı ortalama 1,11; dilimdeyken bile yalnız %31i 1,30+). Oynanan: 2,5 Üst ve 2,5 Alt. Liste: 44 OYNA (2,5 Üst 27, 2,5 Alt 17).
 İlk uygulama: 28-29 Kasım'ın başlamamış 726 maçı -> 136 OYNA (3,5 Alt 90, 2,5 Üst 27, 2,5 Alt 17, 1,5 Üst 2); tahmin/YeniSistem_OYNA_2026-11-28.xlsx.
+
+## PROGRAM (program\Baslat.bat) · 28.11.2026
+Kullanıcının isteği: "excel istemiyorum, sistem istiyorum". Eski programdan hiçbir parça yok (şart 7); ekrandaki her yazı motorun sonucundan (şart 6).
+- Açılış: program\Baslat.bat (Windows PowerShell 5.1, WPF). Hesap kodu: yeni_sistem\*.cs (zincir, ekler, karar) + program\kod\*.cs.
+- Güncelle (açılışta kendiliğinden):
+  1. Bülten: önümüzdeki 36 saatin futbol maçları ve oranları.
+  2. Her maçın bilgisi (lig, sezon, takımlar) ve lig tablosu (3 saatte bir yenilenir).
+  3. O liglerin bütün takımlarının maç listeleri (12 saatte bir yenilenir; tablo eksiksiz kurulsun diye).
+  4. Arşiv: program\veri içindeki bütün takım listelerinden (SiteArsivi.ps1 ile aynı kurallar; aynı önbellekte 164.698 maç, iki yol aynı).
+  5. Tablo kontrolü -> zincir -> karar.
+  6. Kayıt: program\kayit\tahminler.csv.
+- Kayıt: başlamamış maçın satırı her güncellemede yenilenir; başlamış maçın satırı donar. Skor takım listelerine girince satıra yazılır, OYNA satırında "tuttu / tutmadı".
+- Sekmeler: Maçlar (yüzdeler, OYNA yeşil; satıra tıklayınca kararın nasıl çıktığı), Sonuçlar (OYNA kayıtları, tuttu %, 1 birim kazanç), Nasıl karar veriyoruz (Karar.cs sabitlerinden üretilir).
+- İsabetli şut: site listelerinde şut yok, bu yüzden programda Ek 1 uygulanmaz. Sınama (4.610 oranlı maç, aynı dilimler):
+  şutlu 468 bahis %63,2 (yarılar %63,0 / %63,5); şutsuz 429 bahis %62,5 (%62,1 / %62,8). Dilimler şutsuz da tutuyor.
+- Sınama (28.11.2026 14:30, gerçek site): bültende 814 maç, 730 hesaplandı, 48 OYNA (2,5 Üst 25, 2,5 Alt 23); süre 40 sn (önbellek doluyken).
+  Hesaplanmayanlar: 64 sitede tablo yok (kupa vb.), 13 takım tabloda yok, 6 tablo eksik, 1 maç bilgisi yok.
+- İlk açılışta önbellek boş: binlerce takım listesi indirilir, uzun sürer (sonraki açılışlar dakikalar).
+- C# 5 / .NET 4.8 derleme denetimi: 0 hata. Ekran (WPF) burada (Linux) açılamadı; XAML ve PowerShell sözdizimi denetlendi.

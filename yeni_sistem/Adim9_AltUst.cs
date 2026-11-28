@@ -1,4 +1,4 @@
-// YENİ SİSTEM · ADIM 9-12: ARALIKTAN ÇIKAN ALT / ÜST BAHİSLERİ
+﻿// YENİ SİSTEM · ADIM 9-12: ARALIKTAN ÇIKAN ALT / ÜST BAHİSLERİ
 // Adım 4'ün skor dağılımından 1,5 / 2,5 / 3,5 / 4,5 Üst yüzdeleri (Alt = 1 - Üst). Kullanıcının şeması:
 //   0-1 gol -> 1,5 Alt, 2,5 Alt     2-3 gol -> 1,5 Üst, 2,5 Üst     4-5 gol -> 2,5 Üst, 3,5 Üst     6+ gol -> 3,5 Üst, 4,5 Üst
 // En olası aralık (Adım 5) ve o aralığın bahisleri de verilir. Bu adım karar vermez (OYNA yok). C# 5.
