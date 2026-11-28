@@ -129,3 +129,12 @@ her bahsin sınırı bir yarıda öğrenildi (öğrenilen yarıda %58 altı kapa
   - kendi xG ≈ isabetli şut (Ek 1): ek bilgi yok;
   - Flashscore xG tek başına şuttan biraz iyi, ama şut zincirdeyken eklenince: tek gün MS 1,0138 -> 1,0141 (kötü), çift gün 1,0248 -> 1,0243 (iyi): tutarsız.
 - Karar: kendi xG'miz her maç için hesaplanır ve kaydedilir (arşive isz_ / bf_ sütunları, Mac.IszEv / BfEv), ekranda gösterilebilir; yüzdelere karışmaz.
+
+## Ek 3: Takım karnesi · form ve seri · 28.11.2026 · ALINMADI
+Veri: iki takımın da en az 8 lig maçı olan 8.316 maç; taban = zincirin bugünkü hâli (tablolar + isabetli şut). Ağırlık eksi de olabilir (form geri dönebilir).
+- Gol formu (son 5 maçta atılan / yenilen, takımın sezon ortalamasına göre; lig ortalamasıyla dengeli): öğrenilen ağırlık 0,1 ve 0.
+  0,1 sınanan yarıda MS 1,0111 -> 1,0124 / 1,0121 ve gol 2,9848 -> 2,9857'ye bozdu; öbür yarıda 0 (etkisiz).
+- Puan formu ve seri (son 5 maçta alınan puan, sezon ortalamasına göre; MS dengesine): öğrenilen ağırlık +0,03 / -0,03 (ters işaret),
+  iki sınanan yarıda da MS bozuldu (1,0111 -> 1,0122; 1,0047 -> 1,0054).
+- Ev / deplasman başarısı zaten Adım 2 (iç / dış tablo) olarak zincirde.
+- Sonuç: tablo ve şut zincirdeyken son maç formu bir şey katmıyor (eski sistemde de form "geri dönüyordu").
