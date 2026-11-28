@@ -20,6 +20,7 @@ namespace YeniSistem
         public double[,] Skor;                // skor dağılımı [ev, dep] 0-10 (Adım 5-8 için)
         public int MacEv, MacDep;             // takımların tablodaki maç sayısı
         public bool SutKullanildi;            // Ek 1 (isabetli şut) uygulandı mı
+        public bool IkiliKullanildi;          // Ek 5 (ikili maçlar) uygulandı mı
     }
 
     public static class Adim4
@@ -78,6 +79,7 @@ namespace YeniSistem
                 t.LamDep *= Math.Pow(r(so.DepAt, so.DepN) * r(so.EvYe, so.EvN), SutAgirlik);
                 t.SutKullanildi = true;
             }
+            if (Ek5.Hazir) { double le = t.LamEv, ld = t.LamDep; if (Ek5.Uygula(evId, depId, kesim, ref le, ref ld)) { t.LamEv = le; t.LamDep = ld; t.IkiliKullanildi = true; } }
             t.Skor = Dagilim(t.LamEv, t.LamDep);
             for (int i = 0; i <= MaxGol; i++) for (int j = 0; j <= MaxGol; j++) { double p = t.Skor[i, j]; if (i > j) t.P1 += p; else if (i == j) t.PX += p; else t.P2 += p; }
             t.Gecerli = true;

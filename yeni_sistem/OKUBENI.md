@@ -144,3 +144,13 @@ Kaynak: MAM kadro_gecmis.csv (programın Kasım'da analiz ettiği maçlar); yeni
 - Kadro gücü (güçlü 11 çıkaranın beklenen golü artar, rakibinki azalır): öğrenilen ağırlık 0,25 / 0. 0,25 sınanan 371 maçta MS 0,9965 -> 0,9992, gol 2,8401 -> 2,8445 (bozdu).
 - Eksiklerin golü (golcüsü eksik takımın beklenen golü azalır): öğrenilen 0 / 0,02. 0,02 sınanan 282 maçta MS 0,9977 -> 0,9997, aralık 1,2855 -> 1,2913 (bozdu).
 - Sonuç: yarı başına 260-410 maçla katkı görünmüyor. "İşe yaramaz" denmedi: kadro kaydı biriktikçe (en az birkaç bin maç) aynı yöntemle yeniden sınanacak.
+
+## Ek 5: Maç karnesi · ikili maçlar (Ek5_IkiliMac.cs, Adım 4'e bağlı) · sınandı ve alındı 28.11.2026
+- İki takımın maçtan önceki aralarındaki son 5 maçı (her turnuva), en az 2 maç; az maç d = n / (n + 3) ile daha az sayılır.
+  Gol farkı ortalaması -> ev / deplasman beklenen golü e^(+/-0,1 x fark x d); toplam gol ortalaması -> iki beklenen gol e^(0,1 x (ikili toplam - beklenen toplam) x d).
+- Öğren-sına (15.144 maç, 9.528'inde 2+ ikili maç): iki öğrenmede de fark 0,1 / toplam 0,1 (dengeleme 3 / 5) -> ortak 0,1 / 0,1 / 3.
+- C# koduyla bütün maçlarda: tek gün MS 1,0206 -> 1,0186, gol aralığı 1,2294 -> 1,2285; çift gün MS 1,0206 -> 1,0188, gol aralığı 1,2220 -> 1,2201.
+## Maç karnesinin öbür parçaları · 28.11.2026
+- Dinlenme farkı (iki takımın son maçından geçen gün, +/-4 ile sınırlı): iki yarıda aynı yön ama etki binde 0,2-0,3: alınmadı (çok küçük).
+- Yorgunluk (son maçtan 3,5 günden az): tutmadı.
+- Maçın önemi (sezonun son 8 maçında şampiyonluk / düşme hesabı, Adım 1 tablosundan): yalnız 800 maçta hesaplanabildi, bir tarafın önemli öbürünün önemsiz olduğu 99 maç: veri az, sınanmadı.
