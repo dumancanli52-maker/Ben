@@ -154,3 +154,11 @@ Kaynak: MAM kadro_gecmis.csv (programın Kasım'da analiz ettiği maçlar); yeni
 - Dinlenme farkı (iki takımın son maçından geçen gün, +/-4 ile sınırlı): iki yarıda aynı yön ama etki binde 0,2-0,3: alınmadı (çok küçük).
 - Yorgunluk (son maçtan 3,5 günden az): tutmadı.
 - Maçın önemi (sezonun son 8 maçında şampiyonluk / düşme hesabı, Adım 1 tablosundan): yalnız 800 maçta hesaplanabildi, bir tarafın önemli öbürünün önemsiz olduğu 99 maç: veri az, sınanmadı.
+
+## Ek 6: Hava durumu · 28.11.2026 · ŞİMDİLİK ALINMADI (tutarsız)
+Kaynak: eski sistemin hava kayıtları (MAM arsiv_hava.csv + kayıtların hava sütunları, 6.919 maç); tarih / takım / skorla yeni arşive eşleşen 4.061,
+tablosu tam liglerde 3.343 maç (571 yağmurlu, 189 rüzgarlı 20+ km/s, 263 aşırı sıcak 28+ / soğuk 3- derece). Taban: zincirin bugünkü hâli (tablo + şut + ikili maç).
+- Yağmur: yağmurlu maçta gerçek gol beklenenden +0,10 (yağmursuzda -0,06). Öğrenilen ağırlık iki yarıda +0,05 (toplam gol artar):
+  gol aralığı iki yarıda iyileşti (1,2283 -> 1,2273; 1,2318 -> 1,2314) ama MS iki yarıda biraz bozuldu (+0,0002) ve gol hatası bir yarıda bozuldu: tutarlı değil.
+- Rüzgar: iki yarı ters yön (+0,02 / -0,02), ikisi de bozdu. Aşırı sıcak / soğuk: -0,05 / 0, katkı yok.
+- Hava kayıtları biriktikçe (özellikle yağmurlu maç sayısı) yeniden sınanacak.
